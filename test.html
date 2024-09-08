@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AgriSense</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.23/build/spline-viewer.js"></script>
+  <!-- =======================================================
+  * Template Name: BizPage
+  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">AgriSense</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicesde.html">Services</a></li>
+          <li class="dropdown"><a href="#"><span>Discover</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-details.html">Predictions</a></li>          
+              <li><a href="starter.html">Management</a></li>
+              <li><a href="test.html">Assessments</a></li>
+              <li><a href="service-details.html">Live Map</a></li>
+              <li><a href="blog.html">My Device</a></li>
+            </ul>
+          </li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>Impact and Damage Assessment</h1>
+       
+        
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Impact Dashboard</h2>
+        <p>Track the effectiveness of your agricultural practices over time.</p>
+      </div><!-- End Section Title -->
+
+      <section id="impact-dashboard" class="impact-dashboard section">
+        <div class="container">
+          
+          <!-- Crop Yield Chart -->
+          <div>
+            <h4>Crop Yield Over Time</h4>
+            <p>This chart shows the annual crop yield from 2019 to 2023. The steady increase in yield demonstrates the positive impact of improved farming practices, such as precision irrigation and optimized fertilization. Monitoring crop yield over time helps assess the effectiveness of these interventions, providing valuable insights into which strategies are most beneficial.</p>
+            <canvas id="cropYieldChart"></canvas>
+          </div>
+  
+          <!-- Soil Moisture Chart -->
+    <div>
+      <h4>Soil Moisture Development Over Time</h4>
+      <p>This chart tracks soil moisture levels over a six-month period. Soil moisture is a critical factor in crop health, and maintaining optimal levels can prevent both over-irrigation and drought stress. By monitoring soil moisture trends, you can adjust irrigation schedules to ensure that crops receive the right amount of water, improving water efficiency and crop yield.</p>
+      <canvas id="soilMoistureChart"></canvas>
+    </div>
+        </div>
+      </section>
+      <section id="starter-section" class="starter-section section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Damage assessmant</h2>
+            <p></p>
+            <div>
+                <h4> </h4>
+                <p> </p>
+              </div>
+              <div>
+                <h4>Heat index development</h4>
+                <p>In the future, a heat map reveals the worsening heat index worldwide. Yellow zones indicate manageable heat with minimal stress on agriculture, while orange areas show moderate damage as rising temperatures disrupt farming and comfort. Red regions face extreme heat, posing critical threats to crops and human survival. This gradient highlights escalating heat impacts, from early challenges to unsustainable conditions.</p>
+              </div>
+        </div><!-- End Section Title -->
+         
+          <spline-viewer url="https://prod.spline.design/UmA2b2Bco5ex1QXt/scene.splinecode"></spline-viewer>
+      </section><!-- /Starter Section Section -->
+    </section><!-- /Starter Section Section -->
+
+  </main>
+  <script>
+    // Chart 1: Crop Yield Over Time (remains the same)
+    var ctxYield = document.getElementById('cropYieldChart').getContext('2d');
+    var cropYieldChart = new Chart(ctxYield, {
+      type: 'line',
+      data: {
+        labels: ['2019', '2020', '2021', '2022', '2023'], // Example years
+        datasets: [{
+          label: 'Crop Yield (tons)',
+          data: [150, 175, 200, 230, 250], // Example yield data
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  
+    // Chart 2: Soil Moisture Development Over Time
+    var ctxMoisture = document.getElementById('soilMoistureChart').getContext('2d');
+    var soilMoistureChart = new Chart(ctxMoisture, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'], // Example months
+        datasets: [{
+          label: 'Soil Moisture (%)',
+          data: [30, 45, 60, 55, 70, 65], // Example soil moisture data
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, max: 100 } // Soil moisture percentage should ideally be between 0-100%
+        }
+      }
+    });
+  </script>
+   <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">AgriSense</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p></p>
+            <p>Marrakech, Morocco</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+212 700 619 714</span></p>
+            <p><strong>Email:</strong> <span>info.agrisense@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a>Weather Data</a></li>
+            <li><a>NASA Integration</a></li>
+            <li><a>Predictive Analytics</a></li>
+            <li><a>Water Management</a></li>
+            <li><a>Impact Assessment</a></li>
+            <li><a>Custom Alerts</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Join our community and stay ahead with the latest updates, insights, and tips—subscribe now to empower your farming journey!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">AgriSense</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://www.akram.bond">Akram Bellouk</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

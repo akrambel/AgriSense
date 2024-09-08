@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AgriSense</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- =======================================================
+  * Template Name: BizPage
+  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">AgriSense</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicesde.html">Services</a></li>
+          <li class="dropdown"><a href="#"><span>Discover</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-details.html">Predictions</a></li>          
+              <li><a href="starter.html">Management</a></li>
+              <li><a href="test.html">Assessments</a></li>
+              <li><a href="service-details.html">Live Map</a></li>
+              <li><a href="blog.html">My Device</a></li>
+            </ul>
+          </li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>Water Management Solutions</h1>
+       
+       
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+     
+
+     
+
+    </section><!-- /Starter Section Section -->
+    <section id="water-management-charts" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Smart Water Management Insights</h2>
+        <p>Explore data-driven solutions that optimize water usage in agriculture, including precision irrigation, soil moisture monitoring, and rainwater harvesting, ensuring efficient and sustainable farming practices.</p>
+      </div>
+    
+      <div class="container">
+        <!-- Precision Irrigation Scheduling Chart -->
+        <canvas id="precision-irrigation-chart"></canvas>
+        <div class="content">
+          <p><strong class="px-1 sitename"> - Advice: </strong>
+            Monitor weekly water usage and gradually adjust irrigation based on real-time soil moisture data and weather conditions. By using precision irrigation techniques, you can reduce water waste and still maintain optimal crop health, as seen in the declining water usage over the weeks. Aim for consistent reductions without compromising crop yields.
+          </p>
+        </div>
+        <!-- Soil Moisture Monitoring Chart -->
+        <canvas id="soil-moisture-chart"></canvas>
+        <div class="content">
+          <p><strong class="px-1 sitename"> - Advice: </strong>
+            Regularly monitor soil moisture levels across different zones of your farm. If certain zones (like Zone 1) have lower moisture levels, consider adjusting irrigation schedules or focusing more water resources in those areas. Proper monitoring ensures even water distribution and prevents under- or over-irrigation, maximizing crop growth efficiency.
+          </p>
+        </div>
+        <!-- Rainwater Harvesting Chart -->
+        <canvas id="rainwater-harvesting-chart"></canvas>
+        <div class="content">
+          <p><strong class="px-1 sitename">  </strong>
+            
+          </p>
+        </div>
+        <div class="content">
+          <p><strong class="px-1 sitename"> - Advice: </strong>
+            Maximize the use of stored rainwater during dry periods to reduce dependency on external water sources. Based on the data, it's clear that a significant amount of rainwater can be stored and used for irrigation. Implementing efficient rainwater harvesting can reduce costs and ensure a reliable water supply when rainfall is scarce.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  <script>
+    // Precision Irrigation Scheduling Chart
+    const ctx1 = document.getElementById('precision-irrigation-chart').getContext('2d');
+    const precisionIrrigationChart = new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Water Usage (L)',
+          
+          data: [500, 450, 420, 400],
+          borderColor: 'rgba(2, 60, 57, 1)',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Liters' }
+          },
+          x: {
+            title: { display: true, text: 'Week' }
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Water Savings Through Precision Irrigation'
+          }
+        }
+      }
+    });
+  
+    // Soil Moisture Monitoring Chart
+    const ctx2 = document.getElementById('soil-moisture-chart').getContext('2d');
+    const soilMoistureChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'],
+        datasets: [{
+          label: 'Soil Moisture Level (%)',
+          data: [30, 45, 50, 35],
+          backgroundColor: 'rgba(2, 60, 57, 0.45)',
+          borderColor: 'rgba(2, 60, 57, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Moisture (%)' }
+          },
+          x: {
+            title: { display: true, text: 'Irrigation Zone' }
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Soil Moisture Monitoring'
+          }
+        }
+      }
+    });
+  
+    // Rainwater Harvesting Chart
+    const ctx3 = document.getElementById('rainwater-harvesting-chart').getContext('2d');
+    const rainwaterHarvestingChart = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+        labels: ['Stored Rainwater', 'Used Rainwater'],
+        datasets: [{
+          label: 'Rainwater (Liters)',
+          data: [3000, 1200],
+          backgroundColor: [
+            'rgba(2, 60, 57, 0.45)',
+            'rgba(255, 99, 132, 0.2)'
+          ],
+          borderColor: [
+            'rgba(2, 60, 57, 1)',
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Rainwater Harvesting System'
+          }
+        }
+      }
+    });
+  </script>
+  
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">AgriSense</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p></p>
+            <p>Marrakech, Morocco</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+212 700 619 714</span></p>
+            <p><strong>Email:</strong> <span>info.agrisense@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a>Weather Data</a></li>
+            <li><a>NASA Integration</a></li>
+            <li><a>Predictive Analytics</a></li>
+            <li><a>Water Management</a></li>
+            <li><a>Impact Assessment</a></li>
+            <li><a>Custom Alerts</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Join our community and stay ahead with the latest updates, insights, and tips—subscribe now to empower your farming journey!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">AgriSense</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://www.akram.bond">Akram Bellouk</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
