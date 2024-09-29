@@ -217,57 +217,52 @@
           options: { responsive: true }
         });
       </script>
-
-
-
-
-<section id="technical-specifications" class="technical-specifications section">
-  <div class="container">
-    <h2>Technical Specifications</h2>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Meteorological Parameters</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Temperature</td>
-          <td id="temperature">Loading...</td>
-        </tr>
-        <tr>
-          <td>Humidity</td>
-          <td id="humidity">Loading...</td>
-        </tr>
-        <tr>
-          <td>Pressure</td>
-          <td id="pressure">Loading...</td>
-        </tr>
-        <tr>
-          <td>Altitude</td>
-          <td id="altitude">Loading...</td>
-        </tr>
-        <tr>
-          <td>Soil Moisture</td>
-          <td id="soil_moisture">Loading...</td>
-        </tr>
-        <tr>
-          <td>Global Warming Index</td>
-          <td id="global_warming">Loading...</td>
-        </tr>
-        <tr>
-          <td>Rainfall</td>
-          <td id="rainfall">Loading...</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+     <section id="technical-specifications" class="technical-specifications section">
+      <div class="container">
+        <h2>Technical Specifications</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Meteorological Parameters</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Temperature</td>
+              <td>30.9 °C</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td>61 %</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>1009.87 Hpa</td>
+            </tr><tr>
+              <td>Heat Index</td>
+              <td>65.82</td>
+            </tr>
+            <tr>
+              <td>Rain </td>
+              <td>1.00 %</td>
+            </tr>
+            <tr>
+              <td>Altitude </td>
+              <td>4228.30 M</td>
+            </tr>
+            <tr>
+              <td>Soil Moisture</td>
+              <td>0.00 %</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
      
      
 
-    
+    </section><!-- /Starter Section Section -->
 
   </main>
 
@@ -392,29 +387,7 @@
       options: { responsive: true }
     });
   </script>
-<script>
-  // Function to fetch Blynk data
-  function fetchBlynkData() {
-    fetch('get_blynk_data.php') // Replace with the correct path to your PHP file
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('temperature').textContent = data.temperature + " °C";
-        document.getElementById('humidity').textContent = data.humidity + " %";
-        document.getElementById('pressure').textContent = data.pressure + " hPa";
-        document.getElementById('altitude').textContent = data.altitude + " m";
-        document.getElementById('soil_moisture').textContent = data.soil_moisture + " %";
-        document.getElementById('global_warming').textContent = data.global_warming;
-        document.getElementById('rainfall').textContent = data.rainfall + " %";
-      })
-      .catch(error => console.error('Error fetching Blynk data:', error));
-  }
 
-  // Fetch data every 5 seconds
-  setInterval(fetchBlynkData, 5000);
-
-  // Fetch data immediately when the page loads
-  fetchBlynkData();
-</script>
 </body>
 
 </html>
