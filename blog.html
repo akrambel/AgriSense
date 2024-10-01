@@ -258,10 +258,9 @@ const temperatureChart = new Chart(ctxTemp, {
         }]
     },
     options: {
-        responsive: true,
         plugins: {
             legend: {
-                display: true,
+                onClick: null  // Disable hiding/showing the dataset when clicking on the legend
             }
         }
     }
@@ -282,10 +281,9 @@ const moistureChart = new Chart(ctxMoisture, {
         }]
     },
     options: {
-        responsive: true,
         plugins: {
             legend: {
-                display: true,
+                onClick: null  // Disable hiding/showing the dataset when clicking on the legend
             }
         }
     }
@@ -306,10 +304,9 @@ const rainChart = new Chart(ctxRain, {
         }]
     },
     options: {
-        responsive: true,
         plugins: {
             legend: {
-                display: true,
+                onClick: null  // Disable hiding/showing the dataset when clicking on the legend
             }
         }
     }
