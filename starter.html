@@ -90,40 +90,161 @@
     </section><!-- /Starter Section Section -->
     <section id="water-management-charts" class="section">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Smart Water Management Insights</h2>
-        <p>Explore data-driven solutions that optimize water usage in agriculture, including precision irrigation, soil moisture monitoring, and rainwater harvesting, ensuring efficient and sustainable farming practices.</p>
+        <h2>Smart Irrigation Prediction System</h2>
+        <p>Optimizing Water Usage and Predicting Soil Moisture for Sustainable Farming</p>
       </div>
     
-      <div class="container">
-        <!-- Precision Irrigation Scheduling Chart -->
-        <canvas id="precision-irrigation-chart"></canvas>
-        <div class="content">
-          <p><strong class="px-1 sitename"> - Advice: </strong>
-            Monitor weekly water usage and gradually adjust irrigation based on real-time soil moisture data and weather conditions. By using precision irrigation techniques, you can reduce water waste and still maintain optimal crop health, as seen in the declining water usage over the weeks. Aim for consistent reductions without compromising crop yields.
-          </p>
-        </div>
-        <!-- Soil Moisture Monitoring Chart -->
-        <canvas id="soil-moisture-chart"></canvas>
-        <div class="content">
-          <p><strong class="px-1 sitename"> - Advice: </strong>
-            Regularly monitor soil moisture levels across different zones of your farm. If certain zones (like Zone 1) have lower moisture levels, consider adjusting irrigation schedules or focusing more water resources in those areas. Proper monitoring ensures even water distribution and prevents under- or over-irrigation, maximizing crop growth efficiency.
-          </p>
-        </div>
-        <!-- Rainwater Harvesting Chart -->
-        <canvas id="rainwater-harvesting-chart"></canvas>
-        <div class="content">
-          <p><strong class="px-1 sitename">  </strong>
-            
-          </p>
-        </div>
-        <div class="content">
-          <p><strong class="px-1 sitename"> - Advice: </strong>
-            Maximize the use of stored rainwater during dry periods to reduce dependency on external water sources. Based on the data, it's clear that a significant amount of rainwater can be stored and used for irrigation. Implementing efficient rainwater harvesting can reduce costs and ensure a reliable water supply when rainfall is scarce.
-          </p>
-        </div>
-      </div>
     </section>
+     <!-- Section for user input -->
+<section id="irrigation-calculator" class="section">
+  <div class="container">
+    <h2>Irrigation Calculator</h2>
+    <form id="irrigation-form">
+      <!-- Compact input fields for reservoir volume -->
+      <div class="mb-3">
+        <label for="reservoir-volume" class="form-label">Reservoir Volume (liters)</label>
+        <input type="number" class="form-control form-control-sm" id="reservoir-volume" required>
+      </div>
+      <!-- Compact input fields for water percentage -->
+      <div class="mb-3">
+        <label for="water-percentage" class="form-label">Water Percentage in Reservoir (%)</label>
+        <input type="number" class="form-control form-control-sm" id="water-percentage" required>
+      </div>
+      <!-- Compact input fields for field area -->
+      <div class="mb-3">
+        <label for="field-area" class="form-label">Field Area (m²)</label>
+        <input type="number" class="form-control form-control-sm" id="field-area" required>
+      </div>
+      <!-- Dropdown for selecting plant type -->
+      <div class="mb-3">
+        <label for="plant-type" class="form-label">Plant Type</label>
+        <select class="form-select form-select-sm" id="plant-type">
+          <option value="xerophilous">Xerophilous Plants (15%)</option>
+          <option value="mesophilous">Mesophilous Plants (50%)</option>
+          <option value="hydrophilous">Hydrophilous Plants (80%)</option>
+          <option value="succulent">Succulents (10%)</option>
+          <option value="drought-tolerant">Drought-tolerant Plants (25%)</option>
+          <option value="aquatic">Aquatic Plants (100%)</option>
+        </select>
+      </div>
+      <!-- Submit button with adjusted color and size -->
+      <button type="submit" class="btn btn-primary" style="background-color: #023C39; border-color: #023C39;">Calculate</button>
+    </form>
     
+    <!-- Canvas for soil moisture prediction graph -->
+    <canvas id="moistureChart"></canvas>
+    <!-- Canvas for water usage graph -->
+    <canvas id="waterUsageChart"></canvas>
+  </div>
+</section>
+
+<script>
+let moistureChart;  // Declare variables for charts
+let waterUsageChart;
+
+document.getElementById('irrigation-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const reservoirVolume = parseFloat(document.getElementById('reservoir-volume').value);
+    const waterPercentage = parseFloat(document.getElementById('water-percentage').value);
+    const fieldArea = parseFloat(document.getElementById('field-area').value); // Input for field area
+    const plantType = document.getElementById('plant-type').value;
+    
+    const moistureNeeds = {
+        xerophilous: 15,
+        mesophilous: 50,
+        hydrophilous: 80,
+        succulent: 10,
+        drought_tolerant: 25,
+        aquatic: 100
+    };
+
+    const weeks = 4; // Number of weeks
+    const rainImpact = 5; // Rain impact on soil moisture (% per week, can be adjusted)
+    const evaporationRate = 2; // Evaporation due to temperature and humidity (% per week, can be adjusted)
+    let initialSoilMoisture = 10; // Initial soil moisture percentage (can be adjusted or input by the user)
+    
+    // Calculate predicted soil moisture without irrigation
+    const weeklySoilMoisture = [];
+    for (let week = 1; week <= weeks; week++) {
+        // Simulate rain impact
+        initialSoilMoisture += rainImpact;
+        
+        // Simulate evaporation due to environmental factors
+        initialSoilMoisture -= evaporationRate;
+        
+        // Cap soil moisture between 0% and 100%
+        if (initialSoilMoisture > 100) initialSoilMoisture = 100;
+        if (initialSoilMoisture < 0) initialSoilMoisture = 0;
+        
+        weeklySoilMoisture.push(initialSoilMoisture);
+    }
+
+    // Calculate water usage for irrigation
+    const neededMoisturePercentage = moistureNeeds[plantType];
+    const weeklyWaterUsage = [];
+    for (let week = 1; week <= weeks; week++) {
+        const totalWaterUsed = (neededMoisturePercentage / 100) * (waterPercentage / 100) * reservoirVolume * fieldArea;
+        const waterUsedThisWeek = totalWaterUsed / weeks;  // Spread evenly over the weeks
+        const waterUsedPercentage = (waterUsedThisWeek / (reservoirVolume * fieldArea)) * 100;
+        weeklyWaterUsage.push(waterUsedPercentage);
+    }
+
+    // Destroy old charts if they exist
+    if (moistureChart) {
+        moistureChart.destroy();
+    }
+    if (waterUsageChart) {
+        waterUsageChart.destroy();
+    }
+
+    // Create new chart for predicted soil moisture (without irrigation)
+    const ctx1 = document.getElementById('moistureChart').getContext('2d');
+moistureChart = new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+            label: 'Predicted Soil Moisture (%)',
+            data: weeklySoilMoisture,
+           borderColor: '#04837bd1',  // Border color
+                backgroundColor: 'rgba(4, 131, 123, 0.471)',  // Background color
+            fill: true,
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                onClick: null  // Disable hiding/showing the dataset when clicking on the legend
+            }
+        }
+    }
+});
+
+    // Create new chart for water usage
+    const ctx2 = document.getElementById('waterUsageChart').getContext('2d');
+    waterUsageChart = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            datasets: [{
+                label: 'Water Usage for Irrigation (%)',
+                data: weeklyWaterUsage,
+                borderColor: '#023C39',  // Border color
+                backgroundColor: 'rgba(2, 60, 57, 0.2)',  // Background color
+                fill: true,
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                onClick: null  // Disable hiding/showing the dataset when clicking on the legend
+            }
+        }
+    }
+});
+});
+</script>
   </main>
   <script>
     // Precision Irrigation Scheduling Chart
