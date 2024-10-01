@@ -169,54 +169,11 @@
       </section>
 
 
-
-     <section id="live-data" class="live-data section">
-  <div class="container">
-    <h3>Live Data from Our Weather Station</h3>
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Heat Index</h4>
-        <canvas id="temperatureGauge" width="200" height="50"></canvas>
-      </div>
-      <div class="col-md-6">
-        <h4>Soil Moisture Levels</h4>
-        <canvas id="soilMoistureChart" width="500" height="400"></canvas>
-      </div>
-    </div>
-  </div>
-</section>
- 
       
-      <script>
-        // Example: Chart.js code for temperature gauge and soil moisture chart
-        var tempCtx = document.getElementById('temperatureGauge').getContext('2d');
-        var tempChart = new Chart(tempCtx, {
-          type: 'doughnut',
-          data: {
-            labels: ['Heat Index'],
-            datasets: [{
-              data: [57, 66], // Example temperature range
-              backgroundColor: ['#6666669e', '#023C39']
-            }]
-          },
-          options: { responsive: true }
-        });
+  
+  
       
-        var soilCtx = document.getElementById('soilMoistureChart').getContext('2d');
-        var soilMoistureChart = new Chart(soilCtx, {
-          type: 'line',
-          data: {
-            labels: ['10:00', '12:00', '14:00', '16:00'], // Example times
-            datasets: [{
-              label: 'Soil Moisture (%)',
-              data: [30, 35, 40, 38], // Example data
-              borderColor: '#023C39',
-              fill: false
-            }]
-          },
-          options: { responsive: true }
-        });
-      </script>
+      
      <section id="technical-specifications" class="technical-specifications section">
       <div class="container">
         <h2>Technical Specifications</h2>
@@ -260,9 +217,109 @@
       </div>
     </section>
      
-     
+ 
 
-    </section><!-- /Starter Section Section -->
+
+
+  
+<!-- Section for displaying daily predictions -->
+<section id="prediction-display" class="section">
+  <div class="container">
+    <h2>Weather Predictions for the Month</h2>
+
+    <!-- Canvases for the charts -->
+    <canvas id="temperatureChart"></canvas>
+    <canvas id="moistureChart"></canvas>
+    <canvas id="rainChart"></canvas>
+  </div>
+</section>
+
+<script>
+// Predefined mock data for predictions for 30 days
+const days = Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`);
+
+// Example daily predictions (randomly generated for demonstration purposes)
+const temperaturePrediction = Array.from({ length: 30 }, () => Math.floor(Math.random() * (25 - 15 + 1)) + 15); // Predicted temperatures (°C)
+const soilMoisturePrediction = Array.from({ length: 30 }, () => Math.floor(Math.random() * (40 - 20 + 1)) + 20); // Predicted soil moisture (%)
+const rainPrediction = Array.from({ length: 30 }, () => Math.floor(Math.random() * (25 - 0 + 1))); // Predicted rainfall (%)
+
+// Create new chart for temperature predictions
+const ctxTemp = document.getElementById('temperatureChart').getContext('2d');
+const temperatureChart = new Chart(ctxTemp, {
+    type: 'line',
+    data: {
+        labels: days,
+        datasets: [{
+            label: 'Predicted Temperature (°C)',
+            data: temperaturePrediction,
+            borderColor: '#023C39',  // Border color
+            backgroundColor: 'rgba(2, 60, 57, 0.2)',  // Background color
+            fill: true,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+            }
+        }
+    }
+});
+
+// Create new chart for soil moisture predictions
+const ctxMoisture = document.getElementById('moistureChart').getContext('2d');
+const moistureChart = new Chart(ctxMoisture, {
+    type: 'line',
+    data: {
+        labels: days,
+        datasets: [{
+            label: 'Predicted Soil Moisture (%)',
+            data: soilMoisturePrediction,
+            borderColor: '#023C39',  // Border color
+            backgroundColor: 'rgba(2, 60, 57, 0.2)',  // Background color
+            fill: true,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+            }
+        }
+    }
+});
+
+// Create new chart for rainfall predictions
+const ctxRain = document.getElementById('rainChart').getContext('2d');
+const rainChart = new Chart(ctxRain, {
+    type: 'line',
+    data: {
+        labels: days,
+        datasets: [{
+            label: 'Predicted Rainfall (%)',
+            data: rainPrediction,
+            borderColor: '#023C39',  // Border color
+            backgroundColor: 'rgba(2, 60, 57, 0.2)',  // Background color
+            fill: true,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+            }
+        }
+    }
+});
+</script>
+
+
+
+
+   
 
   </main>
 
@@ -356,37 +413,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-    // Temperature Gauge Chart
-    var tempCtx = document.getElementById('temperatureGauge').getContext('2d');
-    var tempChart = new Chart(tempCtx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Temperature'],
-        datasets: [{
-          data: [22, 28], // Example temperature range
-          backgroundColor: ['#FF6384', '#36A2EB']
-        }]
-      },
-      options: { responsive: true }
-    });
-
-    // Soil Moisture Chart
-    var soilCtx = document.getElementById('soilMoistureChart').getContext('2d');
-    var soilMoistureChart = new Chart(soilCtx, {
-      type: 'line',
-      data: {
-        labels: ['10:00', '11:00', '12:00', '13:00'], // Example times
-        datasets: [{
-          label: 'Soil Moisture (%)',
-          data: [30, 35, 40, 38], // Example data
-          borderColor: '#4BC0C0',
-          fill: false
-        }]
-      },
-      options: { responsive: true }
-    });
-  </script>
+  
 
 </body>
 
