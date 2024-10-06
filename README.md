@@ -32,8 +32,6 @@ Our Water Management Solution optimizes irrigation by utilizing real-time data f
 
 ![Logo](https://github.com/user-attachments/assets/a6e61989-937c-4b3f-a064-bccf797db5cd)
 
-![Logo]((https://github.com/user-attachments/assets/f21d14c6-5632-47ba-aed3-883471f0c372)
-
 
 ## The Custom-built Weather Station:
 
