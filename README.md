@@ -54,7 +54,7 @@ Our Device is designed to deliver high-precision, real-time data on key environm
 ![Logo](https://github.com/user-attachments/assets/99784c59-95b4-4561-a37e-9c7fcf4cac9c)
 
 
-## • How does it work?
+##  How does it work?
 • Custom-built Weather Station: Our weather station capture real-time, high-precision data on seven key environmental factors: temperature, humidity, soil moisture, heat index, atmospheric pressure, rainfall and altitude. With high-precision sensors, the station delivers accurate and reliable environmental measurements to ensure farmers receive the most precise data for decision-making.
 
 • Data Integration: The platform integrates NASA’s datasets and data from Space Agency partners to enhance weather predictions, water management, and impact assessment.
