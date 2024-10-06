@@ -38,6 +38,7 @@ Our Water Management Solution optimizes irrigation by utilizing real-time data f
 ## The Custom-built Weather Station:
 
 Our Device is designed to deliver high-precision, real-time data on key environmental factors like temperature, humidity, soil moisture, and more. By integrating NASA’s open data and advanced sensors, the device provides actionable insights for farmers, helping them optimize water usage, predict weather patterns, and make informed decisions for better crop management.
+![Logo](https://github.com/user-attachments/assets/5ae27f39-2843-40d6-b681-89f2b9a196b3)
 
 
 
