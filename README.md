@@ -12,3 +12,12 @@ We developed AgriSense, a comprehensive and interactive platform that integrates
 ## Project Demo
 
 https://youtu.be/QhnJJlatp2A?si=TJQquU2RUwosnyXH
+
+## Final Project
+
+https://www.agrisense.site/
+
+## Project Details
+
+
+
