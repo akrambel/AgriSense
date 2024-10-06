@@ -43,6 +43,14 @@ Our Water Management Solution optimizes irrigation by utilizing real-time data f
 ## The Platform:
 AgriSense is a platform that provides real-time data and predictive analytics to optimize farming practices. It integrates weather data from custom stations and NASA’s datasets to offer insights on water management, weather predictions, and impact assessments, helping farmers make informed decisions for better efficiency and productivity.
 
+![Logo](https://github.com/user-attachments/assets/1eb63913-8a87-4d34-a7fe-f42262aa57dc)
+
+
+## The Custom-built Weather Station:
+
+Our Device is designed to deliver high-precision, real-time data on key environmental factors like temperature, humidity, soil moisture, and more. By integrating NASA’s open data and advanced sensors, the device provides actionable insights for farmers, helping them optimize water usage, predict weather patterns, and make informed decisions for better crop management.
+
+
 ## The Custom-built Weather Station:
 
 Our Device is designed to deliver high-precision, real-time data on key environmental factors like temperature, humidity, soil moisture, and more. By integrating NASA’s open data and advanced sensors, the device provides actionable insights for farmers, helping them optimize water usage, predict weather patterns, and make informed decisions for better crop management.
