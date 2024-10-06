@@ -29,3 +29,15 @@ It offers Water Management Strategies, Weather Predictions, Impact Assessments, 
 - Water Management Solution Summary:
 
 Our Water Management Solution optimizes irrigation by utilizing real-time data from custom-built weather stations and predictive analytics. It provides actionable insights on irrigation timing and quantity, reducing water wastage and enhancing crop yields. The solution includes soil moisture prediction charts and water management charts that visualize changes and optimal schedules, helping farmers anticipate needs. Tailored recommendations for various plant types ensure efficient water use, promoting sustainable farming practices.
+
+![Logo](https://github.com/user-attachments/assets/a6e61989-937c-4b3f-a064-bccf797db5cd)
+
+
+## Overview of the AgriSense Platform and the Custom-built Weather Station:
+
+
+
+
+## The Platform:
+AgriSense is a platform that provides real-time data and predictive analytics to optimize farming practices. It integrates weather data from custom stations and NASA’s datasets to offer insights on water management, weather predictions, and impact assessments, helping farmers make informed decisions for better efficiency and productivity.
+
