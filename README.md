@@ -32,6 +32,14 @@ Our Water Management Solution optimizes irrigation by utilizing real-time data f
 
 ![Logo](https://github.com/user-attachments/assets/a6e61989-937c-4b3f-a064-bccf797db5cd)
 
+![Logo]((https://github.com/user-attachments/assets/f21d14c6-5632-47ba-aed3-883471f0c372)
+
+
+## The Custom-built Weather Station:
+
+Our Device is designed to deliver high-precision, real-time data on key environmental factors like temperature, humidity, soil moisture, and more. By integrating NASA’s open data and advanced sensors, the device provides actionable insights for farmers, helping them optimize water usage, predict weather patterns, and make informed decisions for better crop management.
+
+
 
 ## Overview of the AgriSense Platform and the Custom-built Weather Station:
 
