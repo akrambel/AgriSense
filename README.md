@@ -55,3 +55,17 @@ Our Device is designed to deliver high-precision, real-time data on key environm
 
 Our Device is designed to deliver high-precision, real-time data on key environmental factors like temperature, humidity, soil moisture, and more. By integrating NASA’s open data and advanced sensors, the device provides actionable insights for farmers, helping them optimize water usage, predict weather patterns, and make informed decisions for better crop management.
 ![Logo](https://github.com/user-attachments/assets/5ae27f39-2843-40d6-b681-89f2b9a196b3)
+
+
+![Logo](https://github.com/user-attachments/assets/99784c59-95b4-4561-a37e-9c7fcf4cac9c)
+
+
+## • How does it work?
+• Custom-built Weather Station: Our weather station capture real-time, high-precision data on seven key environmental factors: temperature, humidity, soil moisture, heat index, atmospheric pressure, rainfall and altitude. With high-precision sensors, the station delivers accurate and reliable environmental measurements to ensure farmers receive the most precise data for decision-making.
+
+• Data Integration: The platform integrates NASA’s datasets and data from Space Agency partners to enhance weather predictions, water management, and impact assessment.
+
+• Predictive Analytics: By combining historical and live data, AgriSense provides accurate forecasts for weather, water needs, and potential risks, allowing farmers to optimize their farming activities.
+
+• Visualization: All collected and processed data is displayed on user-friendly dashboards, offering farmers clear and actionable insights.
+
