@@ -217,7 +217,23 @@
       </div>
     </section>
      
- 
+ <div id="output"></div>
+<script>
+  async function fetchData() {
+    const res = await fetch("sensor_data.json");
+    const data = await res.json();
+    document.getElementById("output").innerHTML = `
+      Temp: ${data.temperature}°C<br>
+      Humidity: ${data.humidity}%<br>
+      Rain: ${data.rain}<br>
+      Soil Moisture: ${data.soil}%<br>
+      Pressure: ${data.pressure} hPa<br>
+      Altitude: ${data.altitude} m
+    `;
+  }
+  setInterval(fetchData, 5000); // update every 5s
+  fetchData();
+</script>
 
 
 
@@ -311,25 +327,7 @@ const rainChart = new Chart(ctxRain, {
         }
     }
 });
-</script>
-
-<div id="output"></div>
-<script>
-  async function fetchData() {
-    const res = await fetch("sensor_data.json");
-    const data = await res.json();
-    document.getElementById("output").innerHTML = `
-      Temp: ${data.temperature}°C<br>
-      Humidity: ${data.humidity}%<br>
-      Rain: ${data.rain}<br>
-      Soil Moisture: ${data.soil}%<br>
-      Pressure: ${data.pressure} hPa<br>
-      Altitude: ${data.altitude} m
-    `;
-  }
-  setInterval(fetchData, 5000); // update every 5s
-  fetchData();
-</script>
+</script>                   
 
 
 
