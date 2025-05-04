@@ -1,3 +1,5 @@
+#define BLYNK_TEMPLATE_ID "TMPL2BXb0mLiJ"
+#define BLYNK_TEMPLATE_NAME "AgriSense"
 #define BLYNK_PRINT Serial
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
